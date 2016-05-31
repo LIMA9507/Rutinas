@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Imagen precargada con enlace</title>
+	<script type="text/javascript">
+		image1= new Image();
+		image1.src = "logo_ith.jpg";
+		image2= new Image();
+		image2.src = "logo.png";
+
+		link= new Array
+		links [0] = "nuevap.html"
+		links [1] = "pagina2.html"
+
+		function imgCambia(){
+			var imageNum = document.form.selImage.selectedIndex + 1;
+			fname = eval("image" + imageNum + ".src");
+			document.img.src = fanme;
+		}
+		function go(){
+			location = links[document.form.selImage.selectedIndex];
+		}
+
+		function showlink(){
+			window.status = links[document.form.selImage.selectedIndex];
+		}
+	</script>
+</head>
+<body text="#153584" BGCOLOR="#ffffff" link="#153584" vlink="#B5B5B5">
+<center><map NAME="map1"><area SHAPE=RECT COORDS="25,44,237,62" HREF="http://www.ith.mx" target="_blank"></map><img src="logo_ith.jpg" BORDER=0 USEMAP="#map1" ></center>
+<center><h2>Imagen precargada con enlace</h2></center>
+
+<form name="form">
+<select  name="selImage" size = 1 onChange = "imgCambia()">
+	<option value="">Imagen 1</option>
+	<option value="">Imagen 2</option>
+</select>
+<a href="" onClick="go (); return false;" onMouseOver="showlink(); return true;"  onMouseOut = window.status=''; return true;>
+	<img src="logo_ith.jpg" name="img" border=0>
+</a>
+<br>
+Segun la imagen que tomamos, nos envia a una u otra pagina
+<br>
+<br>
+<center><a href="pagina3.html" target="navegador">Volver a la pagina anterior</a></center>
+</body>
+</html>

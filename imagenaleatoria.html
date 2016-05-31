@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<TITLE>Imagen aleatoria</TITLE>
+<script language="JavaScript">
+
+var imagennumero = 3 ;
+var randomnumero = Math.random() ;
+var rand1 = Math.round( (imagennumero-1) * randomnumero) + 1 ;
+// Definimos un array de imágenes.
+images = new Array
+images[1] = "imagen1.jpg"
+images[2] = "imagen2.jpg"
+images[3] = "imagen2.jpg"
+var image = images[rand1]
+// image guarda la imagen del índice (obtenido de forma aleatoria) del array
+</script>
+</HEAD>
+
+<body text="#153584" BGCOLOR="#ffffff" link="#153584" vlink="#B5B5B5">
+
+
+<H2><CENTER>Imagen aleatoria</H2>
+
+<script language="JavaScript">
+
+  document.write('<IMG SRC="' + image + '">')
+
+</script>
+<bR>
+<center><a href="pagina4.html" target="_self">Volver a la página anterior</a></center>
+
+</BODY>
+</HTML>

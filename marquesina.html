@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<TITLE>Marquesinas</TITLE>
+
+</HEAD>
+<body text="#153584" BGCOLOR="#ffffff" link="#153584" vlink="#B5B5B5">
+<center><map NAME="map1"><area SHAPE=RECT COORDS="25,44,237,62" HREF="http://www.ith.mx" target="_blank"></map><img src="logo.jpg" BORDER=0 USEMAP="#map1" ></center>
+
+<CENTER><H2>Marquesinas</H2></CENTER>
+
+<script language="JavaScript">
+
+<!-- 
+
+
+var scrtxt= "Zeta"
+var lentxt= scrtxt.length; 
+var width= 100;
+var countb= 8; // numero de veces que aparecerá el mensaje
+var count= width+lentxt;
+var nmsg=1; // numero de mensajes
+var message= new initArray("¡Qué gran día!");
+function initArray() {
+  this.length= initArray.arguments.length
+  for (var i= 0; i < this.length; i++)
+  this[i+1]= initArray.arguments[i]
+}
+function shift() {
+  var outtxt= ""
+  var  dif= count-lentxt;
+  if (dif>0) {
+    for (var i= 1; i<=dif; i++) {
+      outtxt= outtxt+" "}
+    outtxt= outtxt+scrtxt.substring(0,width-dif)
+  }
+  else {
+    outtxt= scrtxt.substring(-dif,lentxt)
+  }
+  document.scrform.scrtext.value= outtxt
+}
+function scroll() {
+  var n;
+  if ((countb>0) && (count-lentxt==0)) {count=0}
+  if (count-->0) {
+    shift();
+    setTimeout("scroll()",65)  
+  }
+  else {
+    if (countb-->0) {
+      if ((countb % 2)==0) {
+        document.scrform.scrtext.value= " "
+        setTimeout("scroll()",250) 
+        }
+      else {
+        document.scrform.scrtext.value= scrtxt;
+        if (countb==1) {
+          setTimeout("scroll()",2000)} 
+        else {
+          setTimeout("scroll()",250)} 
+      }
+    }
+    else {
+      now= new Date();
+      n= 1+Math.floor(nmsg*Math.abs(Math.sin(now.getTime())));
+      if (n>nmsg) { n= nmsg}
+      scrtxt= message[n];
+      lentxt= scrtxt.length;
+      count= lentxt+width+1;
+      setTimeout("scroll()",150)  
+    }
+  }
+}
+// -->
+
+</script>
+<center>
+<FORM NAME="scrform" onSubmit="0">
+<INPUT TYPE="text" NAME="scrtext" SIZE=68>
+</FORM>
+<SCRIPT> 
+  // Llamamos a la función 'scroll', encargada de realizar el movimiento de la cadena de caracteres por el cuadro de texto. 
+  scroll();
+</SCRIPT>
+
+Este ejemplo muestra dos mensajes en marquesinas.<BR><BR>
+</CENTER>
+<br>
+<br>
+<center><a href="pagina.html" target="_self">Volver a la página principal</a></center>
+
+</BODY>
+</HTML>

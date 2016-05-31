@@ -1,0 +1,24 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-16" />
+<head>
+	<title>Confirma la carga de una pagina</title>
+	<script language="javascript">
+		function CONFIRM(){
+			if(!confirm("¿Esta seguro que desea abrir esta pagina?"))
+				history.go(-1); return " "
+		}
+		document.writeln(CONFIRM())
+
+
+	</script>
+</head>
+<body text="#153584" BGCOLOR="#FFFFFF" link="#153584" vlink="#B5B5B5" >
+	<center><map NAME="mapl"><area SHAPE=RECT COORDS="25,44,237,62" HREF = "http://www.ith.mx" target="_blank"></map>
+	<img src="logo_ith.jpg" BORDER=0 USEMAP="#mapl"></center>
+	<CENTER><H2>Confirma la carga de la pagina</H2></center>
+		<p>Si ha respondido si, podra leer esto.</p>
+<BR>
+<BR>
+
+<center><a href="pagina.html" target="navegador">Volver a la pagina</a></center>
+</html>

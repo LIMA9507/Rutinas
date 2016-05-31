@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>Día y Hora</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+
+
+  var timerID = null
+  var timerRunning = false
+  function MakeArray(size) 
+  {
+  this.length = size;
+  for(var i = 1; i <= size; i++)
+  {
+  this[i] = "";
+  }
+  return this;
+  }
+  function stopclock (){
+  if(timerRunning)
+  clearTimeout(timerID);
+  timerRunning = false
+  }
+  function showtime () {
+  var now = new Date();
+  year = new String(now.getYear())
+  yearLen = year.length
+  year = year.split("")
+  year = year[yearLen - 2] + year[yearLen - 1]
+  var month = now.getMonth() + 1;
+  var date = now.getDate();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+  var day = now.getDay();
+  Day = new MakeArray(7);
+  Day[0]="Domingo";
+  Day[1]="Lunes";
+  Day[2]="Martes";
+  Day[3]="Miércoles";  // Conjunto de nombres de días de la semana.
+  Day[4]="Jueves";
+  Day[5]="Viernes";
+  Day[6]="Sábado";
+  var timeValue = "";
+  timeValue += (Day[day]) + "   ";
+  timeValue += ((month < 10) ? " 0" : " ") + month + "-";
+  timeValue += date + "-" + year + "    ";                  // Creación del formato de la hora (y día).
+  timeValue += ((hours <= 12) ? hours : hours - 12);
+  timeValue += ((minutes < 10) ? ":0" : ":") + minutes;
+  timeValue += ((seconds < 10) ? ":0" : ":") + seconds;
+  timeValue += (hours < 12) ? " AM" : " PM";
+  document.mifor.face.value = timeValue;
+  timerID = setTimeout("showtime()",1000);     // Llamada a la función mostrar hora cada segundo.
+  timerRunning = true
+  }
+  function startclock () {
+  stopclock();
+  showtime()
+  }
+</SCRIPT>
+</HEAD>
+<!-- Llamada a la función 'startclock' al cargar el documento. -->
+
+<body text="#153584" BGCOLOR="#ffffff" link="#153584" vlink="#B5B5B5" onLoad="startclock();">
+
+
+<CENTER><H2>Día y Hora</H2></CENTER><BR>
+<CENTER><FORM NAME='mifor'>
+<INPUT TYPE=text NAME='face' size=33 value=''>
+</FORM></CENTER><BR>
+<center><a href="pagina5.html" target="_self">Volver a la página principal</a></center>
+</BODY>
+</HTML>

@@ -1,0 +1,68 @@
+.Estilo1{
+
+   font-family: comic;
+   font-size: 24px;
+   font-weight: bold;
+   text-align: center;
+   align-items: center;
+  
+}
+
+table {
+	width: 882px;
+	height:200px;
+	border:0;
+	
+}
+td{
+
+	height:60px;
+}
+td.imagen{
+	width:14px;
+	height:111px;
+}
+img{
+	width:150px; 
+	height:150px; 
+	align:top;
+	border-radius: 20px;
+}
+body{
+	
+	background-color: #D3D2D2;
+
+}
+span.Estilo1{
+	font-size: 35px;
+}
+p.Estilo1{
+	color:#858585;
+	font-style: cursive;
+}
+b.Estilo1{
+	text-align: center;
+	font-size: 50px;
+}
+a{
+font-family: comic;
+ font-size: 20px;
+}
+ul{
+
+list-style-position: outside;
+	list-style-type: georgian;
+}
+li{
+font-family: sans-serif;
+}
+
+img.logo{
+	width:200px; 
+	height:200px; 
+	border-radius: 20px;
+}
+
+h1{
+	text-align: center;
+}

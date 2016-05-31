@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<TITLE>Fondo aleatorio</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+
+        var tiempo;
+        var fondo = new Array;
+        var RandomFondo;
+        // Disponemos de un array con todas las imágenes que se pueden tomar como fondo.
+        fondo[0] = "logo.png"
+        fondo[1] = "logo_ith.jpg"
+        fondo[2] = "logo.png"
+        RandomFondo = fondo[Math.floor(Math.random() * fondo.length)];
+        // Realizamos la función aleatoria.
+
+
+</SCRIPT>
+</HEAD>
+<BODY BACKGROUND="&{RandomFondo};" TEXT="#000000" alink="orange" vlink="red">
+<font color="orange"><CENTER><H2>Fondo aleatorio</H2></CENTER>
+<br>
+<center><a href="pagina4.html" target="_self">Volver a la página principal</a></center>
+</BODY>
+</HTML>

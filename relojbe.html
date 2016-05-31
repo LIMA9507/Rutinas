@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>Reloj - Barra de estado</TITLE>
+<script Language="JavaScript">
+
+
+var timerID = null;
+var timerRunning = false;
+
+function stopclock (){
+        if(timerRunning)
+                clearTimeout(timerID);
+        timerRunning = false;
+}
+
+
+function showtime () {
+        var now = new Date();
+        var hours = now.getHours();                 
+        var minutes = now.getMinutes();           // Obtención de la hora actual.
+        var seconds = now.getSeconds()
+        var timeValue = "" + ((hours >12) ? hours -12 :hours)
+        timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+        timeValue += ((seconds < 10) ? ":0" : ":") + seconds     // Asignación de un formato. (timeValue)
+        timeValue += (hours >= 12) ? " P.M." : " A.M."
+        window.status = timeValue;       // Colocar la variable timeValue en la barra de estado. 
+        timerID = setTimeout("showtime()",1000); // Cada segundo se muestra el resultado de la hora                                                   obtenida.
+        timerRunning = true;
+}
+function startclock () {
+        stopclock();       // Parar la obtención de hora.
+        showtime();        // Mostrar la hora.
+}
+
+</script>
+</HEAD>
+<!-- Llamada a la función al cargar el documento. -->
+<body text="#153584" BGCOLOR="#ffffff" link="#153584" vlink="#B5B5B5" onLoad="startclock()">
+
+
+<CENTER><H2>Reloj - Barra de estado</H2></CENTER>
+<form name="clock" onSubmit="0">
+Observa la barra de estado. Debe aparecer la hora actual.  
+<bR>
+<br>
+
+<center><a href="pagina5.html" target="_self">Volver a la página principal</a></center>
+
+</BODY>
+</HTML>

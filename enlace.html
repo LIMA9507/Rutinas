@@ -1,0 +1,31 @@
+<HTML>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-16" />
+<HEAD>
+	<title>CONFIRMAR ENLACE</title>
+	<script>
+		function confirma(){
+			question= confirm("Bien hecho")
+			if (question !="0"){
+				self.location="nuevap.html"
+			}
+		}
+	</script>
+</HEAD>
+<body text="#153584" BGCOLOR="#FFFFFF" link="#153584"  vlink="#B5B5B5" onLoad ="loadalert()">
+<center><map NAME="mapl"><area SHAPE=RECT COORDS="25,44,237,62" HREF = "http://www.ith.mx" target="_blank"></map>
+	<img src="logo_ith.jpg" BORDER=0 USEMAP="#mapl"></center>
+	<CENTER><H2>CONFIRMAR ENLACES</H2></CENTER>
+	<P>SI PULSAS SOBRE ESTE ENLACE, REALIZARAS UN SALTO A OTRA PAGINA,
+	SIEMPRE QUE HAYAS PULSADO EN ACEPTAR EN EL CUADRO DE CONFIRMACION.</P>
+	<a href="nuevap.html.html" target="_self" onClick="confirma(); return false;">púlsame</a>
+	<br>
+
+
+
+	<CENTER><H2>Aviso tras abrir la pagina</H2></CENTER><BR>
+	tras de cargar esta pagina aparece un mensaje.
+	<BR><BR>
+		<center><a href="pagina.html" target="navegador">Volver a la pagina</a></center>
+
+</BODY>
+</html>

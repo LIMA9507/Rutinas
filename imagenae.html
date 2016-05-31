@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<TITLE>Imagen aleatoria con enlace</TITLE>
+<script language="JavaScript">
+
+var imagenumber = 2 ;
+var randomnumber = Math.random() ;
+var rand1 = Math.round( (imagenumber-1) * randomnumber) + 1 ;
+// Array de imágenes
+images = new Array
+images[1] = "imagen1.jpg"
+images[2] = "imagen2.jpg"
+
+var image = images[rand1]
+// Array de enlaces
+links = new Array
+links[1] = "nuevap.html"
+links[2] = "nuevap.html"
+var link = links[rand1]
+
+</script>
+</head>
+<body text="#153584" BGCOLOR="#ffffff" link="#153584" vlink="#B5B5B5">
+
+<H2><CENTER>Imagen aleatoria con enlace</H2></CENTER>
+<script language="JavaScript">
+
+document.write('<A HREF="' + link + '"><IMG SRC="' + image + '" border="0"></a>')
+
+</script>
+<bR>
+<center><a href="pagina4.html" target="_self">Volver a la página anterior</a></center>
+</BODY>
+</HTML>

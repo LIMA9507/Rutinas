@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Botones adelante y atras</title>
+	<script type="text/javascript">
+		function goHist(a)
+		{
+			history.go(a);
+		}
+
+	</script>
+</head>
+<body text="#153584" BGCOLOR="#ffffff" link="#153584" vlink="#B5B5B5">
+<center><map NAME="map1"><area SHAPE=RECT COORDS="25,44,237,62" HREF="http://www.ith.mx" target="_blank"></map><img src="logo_ith.jpg" BORDER=0 USEMAP="#map1" ></center>
+<center><h2>Botones adelante y atras</h2></center>
+
+<form method="post">
+<INPUT TYPE="button" VALUE="Atras" onClick="goHist(-1)">
+<INPUT TYPE="button" VALUE="Adelante" onClick="goHist(1)">
+</form>
+Se deben usar tambien en las paginas anteriores para ver el funcionamiento del boton
+<br>
+<br>
+<center><a href="pagina2.html" target="navegador">Volver a la pagina anterior</a></center>
+
+</body>
+</html>

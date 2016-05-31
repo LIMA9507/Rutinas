@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Desplegar imagenes (layer)</title>
+	<script type="text/javascript">
+		function layeron(){
+			document.layers['layer1'].clip.bottom = 100;
+		}
+		function layeroff(){
+			document.layers['layer1'].clip.bottom = 22;
+		}
+
+
+
+	</script>
+</head>
+<body text="#153584" BGCOLOR="#ffffff" link="#153584" vlink="#B5B5B5">
+<center><map NAME="map1"><area SHAPE=RECT COORDS="25,44,237,62" HREF="http://www.ith.mx" target="_blank"></map><img src="logo_ith.jpg" BORDER=0 USEMAP="#map1" ></center>
+<center><h2>Desplegar imagenes (layer) </h2></center>
+<layer name ="layer1" left=200 top=200 bgcolor=#c0c0c0 width=80 clip="-2,0,100,22" onMouseOver="layeron();" onMouseOut="layeroff();">
+<img src="logo.png"><b>Enlaces </b><br><br>
+
+<img src="logo_ith.jpg" align =abscenter><a href="nuevap.html">Enlace 1</a><br>
+<img src="logo.png" align=abscenter><a href="nuevap.html">Enlace 2</a>
+</layer>
+<br>
+<br>
+<center><a href="pagina3.html" target="navegador">Volver a la pagina anterior</a></center>
+
+
+
+
+
+
+</body>
+</html>

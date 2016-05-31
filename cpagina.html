@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Contador veces que se ha visitado una página</TITLE>
+
+</HEAD>
+
+<body text="#153584" BGCOLOR="#ffffff" link="#153584" vlink="#B5B5B5">
+
+
+<center><h2>Contador veces que se ha visitado una página</h2></center>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// caution nos avisa cuando la cookie pasa de 4KB
+var caution = false
+
+// name - nombre de la cookie 
+// value - valor de la cookie
+
+function setCookie(name, value, expires, path, domain, secure) {
+        var curCookie = name + "=" + escape(value) +
+                ((expires) ? "; expires=" + expires.toGMTString() : "") +
+                ((path) ? "; path=" + path : "") +
+                ((domain) ? "; domain=" + domain : "") +      // configuración de la cookie, pasándole                                                     unos parámetros
+                ((secure) ? "; secure" : "")
+        if (!caution || (name + "=" + escape(value)).length <= 4000)
+                document.cookie = curCookie
+        else
+                if (confirm("Cookie exceeds 4KB and will be cut!"))
+                        document.cookie = curCookie
+}
+
+function getCookie(name) {
+        var prefix = name + "="
+        var cookieStartIndex = document.cookie.indexOf(prefix)
+        if (cookieStartIndex == -1)
+                return null                         // Obtención de la cookie.
+        var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length)
+        if (cookieEndIndex == -1)
+                cookieEndIndex = document.cookie.length
+        return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
+}
+
+function deleteCookie(name, path, domain) {
+        if (getCookie(name)) {
+                document.cookie = name + "=" + 
+                ((path) ? "; path=" + path : "") +          //  Borrado de la cookie.
+                ((domain) ? "; domain=" + domain : "") +
+                "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+        }
+}
+
+function fixDate(date) {
+        var base = new Date(0)
+        var skew = base.getTime()
+        if (skew > 0)
+                date.setTime(date.getTime() - skew)
+}
+
+var now = new Date()
+fixDate(now)
+now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
+var visits = getCookie("counter")
+if (!visits)                // Si es la primera vez
+        visits = 1
+else
+        visits = parseInt(visits) + 1      // Si ya hemos estado antes.
+setCookie("counter", visits, now)
+document.write("Has estado aquí  " + visits + " veces.")
+
+// -->
+</SCRIPT>
+<br>
+<bR>
+<center><a href="pagina6.html" target="_self">Volver a la página anterior</a></center>
+</BODY>
+</HTML>
+
+
